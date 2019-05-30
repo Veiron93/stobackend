@@ -6,15 +6,15 @@ const app            = express();
 
 let cars = [
 	{
-		id: "1",
+		id: 1,
 		model: "X5"
 	},
 	{
-		id: "2",
+		id: 2,
 		model: "Land Cruiser"
 	},
 	{
-		id: "3",
+		id: 3,
 		model: "Legacy B4"
 	}
 ];
@@ -23,8 +23,12 @@ app.get('/', function(rew, res){
 	res.send('Hello World')
 });
 
-app.get('/car', function(rew, res){
-	res.send('test page')
+app.get('/car/:id', function(req, res){
+
+	var car = cars.find(function(car){
+		return car.id === Number(req.params.id)
+	})
+	res.send(car);
 });
 
 app.listen(4000, () => {
