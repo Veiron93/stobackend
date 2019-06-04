@@ -1,7 +1,14 @@
-const express        = require('express');
-const MongoClient    = require('mongodb').MongoClient;
-const bodyParser     = require('body-parser');
-const app            = express();
+const express = require('express');
+const bodyParser = require('body-parser');
+const app = express();
+
+
+
+
+app.listen(4000, () => {
+  console.log('Server started');
+});
+
 
 
 let cars = [
@@ -31,9 +38,9 @@ app.get('/car/:id', function(req, res){
 	res.send(car);
 });
 
-app.listen(4000, () => {
-  console.log('Server started');
-});
+
+
+
 
 
 
