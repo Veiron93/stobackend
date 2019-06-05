@@ -1,37 +1,19 @@
-const cars = [
+const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
+
+// установка схемы
+const carScheme = new Schema(
     {
-        id: 1,
-        model: "X5"
-    },
+        id: Number,
+        model: String
+    }, 
     {
-        id: 2,
-        model: "Land Cruiser"
-    },
-    {
-        id: 3,
-        model: "Legacy B4"
+        versionKey: false
     }
-];
- 
-module.exports = class Car{
- 
-    constructor(id, model){
-        this.id = id;
-        this.model = model;
-    }
+);
 
-    static getAll(){
-        return cars;
-    }
+module.exports = mongoose.model("Car", carScheme);
 
 
-    static getCar(idCar){
 
-        var car = cars.find(function(e){
-            return e.id == idCar;
-        });
 
-        return car;
-        
-    }
-}

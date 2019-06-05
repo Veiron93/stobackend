@@ -1,12 +1,19 @@
 const express = require('express');
 const app = express();
+const jsonParser = express.json();
+
+const MongoClient = require("mongodb").MongoClient;
+const objectId = require("mongodb").ObjectID;
+const mongoose = require("mongoose");
+
 const bodyParser = require('body-parser');
-
-const carRouter = require("./app/routes/carRouter.js");
-
 app.use(bodyParser.urlencoded({ extended: false }));
 
+const carRouter = require("./app/routes/carRouter.js");
 app.use("/cars", carRouter);
+
+
+
 
 /*
 app.get('/', function(rew, res){
@@ -23,10 +30,53 @@ app.get('/car/:id', function(req, res){
 */
 
 
-app.listen(4000, () => {
-  console.log('Сервер запущен');
-});
 
+// car.save(function(err){
+//     mongoose.disconnect(); 
+      
+//     if(err) return console.log(err);
+//     console.log("Сохранен объект", car);
+// });
+
+
+
+// app.get("/api/cars/:id", function(req, res){
+
+// 	const id = req.params.id;
+        
+//     Car.find({id: id}, function(err, cars){
+ 
+//         if(err) return console.log(err);
+//         res.send(cars)
+//     });
+// });
+
+
+
+
+// app.delete("/api/cars/:id", function(req, res){
+         
+//     const id = req.params.id;
+
+//     Car.remove({id: id}, function(err, car){
+                
+//         if(err) return console.log(err);
+//         res.send(car);
+//     });
+// });
+
+
+
+
+// подключение
+mongoose.connect("mongodb://localhost:27017/sto", { useNewUrlParser: true }, function(err){
+	
+	if(err) return console.log(err);
+
+    app.listen(4000, function(){
+        console.log("Сервер ожидает подключения...");
+    });
+});
 
 
 
