@@ -1,31 +1,14 @@
 const express = require('express');
-const bodyParser = require('body-parser');
 const app = express();
+const bodyParser = require('body-parser');
 
+const carRouter = require("./app/routes/carRouter.js");
 
+app.use(bodyParser.urlencoded({ extended: false }));
 
+app.use("/cars", carRouter);
 
-app.listen(4000, () => {
-  console.log('Server started');
-});
-
-
-
-let cars = [
-	{
-		id: 1,
-		model: "X5"
-	},
-	{
-		id: 2,
-		model: "Land Cruiser"
-	},
-	{
-		id: 3,
-		model: "Legacy B4"
-	}
-];
-
+/*
 app.get('/', function(rew, res){
 	res.send('Hello World')
 });
@@ -37,10 +20,12 @@ app.get('/car/:id', function(req, res){
 	})
 	res.send(car);
 });
+*/
 
 
-
-
+app.listen(4000, () => {
+  console.log('Сервер запущен');
+});
 
 
 
