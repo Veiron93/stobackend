@@ -6,32 +6,14 @@ exports.getCar = function(request, response){
 	var id = Number(request.params.id);
 
 	Car.find({id: id}, function(err, car){
+		
 		if(err) {
             console.log(err);
             return response.sendStatus(400);
         }
 
-        response.send(car);
+
+
+        response.send((car.length > 0)? car : "Данной модели нет");
 	})
 };
-
-
-// exports.getCar = function(request, response){
-
-// 	const idCar = Number(request.params.id);
-    
-//     response.send(Car.getCar(idCar));
-
-//     const collection = req.app.locals.collection;
-
-//     collection.findOne({id: idCar}, function(err, car){
-  
-//         if(err) {
-//             console.log(err);
-//             return response.sendStatus(400);
-//         }
-
-//         response.send(car);
-//     });
-
-// };
