@@ -27,13 +27,10 @@ sequelize
 		    console.log("Сервер запущен");
 		});
 	})
+
 	.catch(err => {
 		console.error('Ошибка подключения к БД:', err);
 	});
-
-
-
-
 
 // sequelize.sync().then(result=>{
 //   console.log(result);
