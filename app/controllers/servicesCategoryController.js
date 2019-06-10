@@ -1,18 +1,18 @@
-const Services = require("../models/services/services.js");
+const ServicesCategory = require("../models/services/servicesCategory.js");
 
 exports.getAll = function(request, response){
 
-	Services.findAll({raw:true}).then(result=>{
+	ServicesCategory.findAll({raw:true}).then(result=>{
 		console.log(result);
 
 		response.send((result.length > 0)? result : "Пусто"); 
 	}).catch(err=>console.log(err));
 };
 
-exports.addService = function(request, response){
+exports.addServiceCategory = function(request, response){
 
-	Services.create({
-		name: "Замена тормозных дисков"
+	ServicesCategory.create({
+		name: "Электрика"
 	}).then(result=>{
 	    const service = {id: result.id, name: result.name}
   		console.log(service);
