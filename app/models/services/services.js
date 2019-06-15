@@ -12,6 +12,18 @@ const Services = sequelize.define("service", {
 		type: Sequelize.STRING,
 		allowNull: false
 	},
+	id_category: {
+		type: Sequelize.INTEGER,
+		//allowNull: false
+	},
+	countViewWeek: {
+		type: Sequelize.INTEGER,
+		//allowNull: false
+	},
+	carServices: {
+		type: Sequelize.JSONB,
+		//allowNull: false
+	},
 });
 
 module.exports = Services;
