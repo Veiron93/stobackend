@@ -12,9 +12,11 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 const carServicesRouter = require("./app/routes/carServicesRouter.js");
 const servicesRouter = require("./app/routes/servicesRouter.js");
+const citiesRouter = require("./app/routes/citiesRouter.js");
 
 app.use("/car-services", carServicesRouter);
 app.use("/services", servicesRouter);
+app.use("/cities", citiesRouter);
 
 
 
