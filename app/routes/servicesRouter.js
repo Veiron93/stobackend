@@ -9,6 +9,8 @@ servicesRouter.use("/categories", servicesCategoryController.getAll);
 servicesRouter.use("/all", servicesController.getAll);
 servicesRouter.use("/add", servicesController.addService);
 
+servicesRouter.use("/top", servicesController.topService);
+
 
 
 module.exports = servicesRouter;

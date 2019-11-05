@@ -4,6 +4,6 @@ const carServicesRouter = express.Router();
 
 carServicesRouter.use("/all", carServicesController.getAll);
 carServicesRouter.use("/add", carServicesController.addCarService);
-carServicesRouter.use("/:id", carServicesController.getCarService);
+carServicesRouter.use("/", carServicesController.getCarServices);
  
 module.exports = carServicesRouter;

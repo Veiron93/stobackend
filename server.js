@@ -8,7 +8,7 @@ app.use(cors());
 const sequelize = require('./db');
 
 const bodyParser = require('body-parser');
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 const carServicesRouter = require("./app/routes/carServicesRouter.js");
 const servicesRouter = require("./app/routes/servicesRouter.js");
