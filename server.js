@@ -10,13 +10,9 @@ const sequelize = require('./db');
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 
-const carServicesRouter = require("./app/routes/carServicesRouter.js");
-const servicesRouter = require("./app/routes/servicesRouter.js");
-const citiesRouter = require("./app/routes/citiesRouter.js");
+const productsRouter = require("./app/routes/productsRouter.js");
 
-app.use("/car-services", carServicesRouter);
-app.use("/services", servicesRouter);
-app.use("/cities", citiesRouter);
+app.use("/products", productsRouter);
 
 
 

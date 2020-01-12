@@ -10,6 +10,6 @@ const Sequelize = require('sequelize');
 // 	}
 // );
 
-const sequelize = new Sequelize('postgres://rhhilcnu:6O5RPktOqOJ4oEChj3H1vTVQdGFyjKkY@satao.db.elephantsql.com:5432/rhhilcnu');
+const sequelize = new Sequelize('postgres://jqyqfeah:i3yvYIJK2EZl60MLvcbVjCz0-egoZSSN@rajje.db.elephantsql.com:5432/jqyqfeah');
 
 module.exports = sequelize;

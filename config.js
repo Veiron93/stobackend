@@ -1,7 +1,7 @@
 const config = {
 
 	db: {
-		dbname: 'sto',
+		dbname: 'blackbox',
 		username: 'postgres',
 		password:  '1517',
 		host: 'localhost',

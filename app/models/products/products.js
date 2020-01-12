@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
 const sequelize = require('../../../db');
 
-const Services = sequelize.define("service", {
+const Products = sequelize.define("product", {
 	id: {
 		type: Sequelize.INTEGER,
 		autoIncrement: true,
@@ -12,18 +12,13 @@ const Services = sequelize.define("service", {
 		type: Sequelize.STRING,
 		allowNull: false
 	},
-	id_category: {
-		type: Sequelize.INTEGER,
-	},
-	countView: {
-		type: Sequelize.INTEGER,
+	description: {
+		type: Sequelize.STRING,
 		allowNull: false
-	}
+	},
 });
 
-module.exports = Services;
-
-
+module.exports = Products;
 
 
 
