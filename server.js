@@ -10,9 +10,13 @@ const sequelize = require('./db');
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 
-const productsRouter = require("./app/routes/productsRouter.js");
+// каталог
+// const productsRouter = require("./app/routes/productsRouter.js");
+// app.use("/products", productsRouter);
 
-app.use("/products", productsRouter);
+// промокоды
+const promocodesRouter = require("./app/routes/promocodesRouter.js");
+app.use("/promocodes", promocodesRouter);
 
 
 

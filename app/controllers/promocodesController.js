@@ -1,13 +1,34 @@
-const Products = require("../models/products/products.js");
-//const Services_CarServices = require("../models/services/services_carServices.js");
+const Promocodes = require("../models/promocodes/promocodes.js");
 
 
-exports.getAll = function(request, response){
+exports.checkPromocode = function(request, response){
 
-	Products.findAll({raw:true}).then(result=>{
-		response.send((result.length > 0)? result : "Пусто"); 
+	const code = request.body.code;
+
+	Promocodes.findAll({
+		raw: true
+
+	}).then(result => {
+
+  		response.send(result);
+
 	}).catch(err=>console.log(err));
+};
 
+exports.addPromocode = function(request, response){
+	Promocodes.create({
+		code: "234",
+		price: 300,
+		type: "public",
+		status: "active",
+		date_start: "2020-02-12",
+		date_end: "2020-03-11"
+	}).then(result=>{
+
+		const promocode = {id: result.id, code: result.code, price: result.price, status: result.status}
+		response.send(promocode);
+		
+	}).catch(err=>console.log(err));
 };
 
 
